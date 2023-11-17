@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <form method="post" action="userRegister.php">
+      <div class="container">
+        <h1>User Register</h1>
+        <div class="imgcontainer">
+          <img src="images/Lirika.png" alt="Avatar" class="avatar" />
+        </div>
+        <hr />
+
+        <label for="uname"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          name="adName"
+          id="umail"
+          required
+        />
+
+        <label for="email"><b>Email</b></label>
+        <input
+          type="text"
+          placeholder="Enter Email"
+          name="adEmail"
+          id="email"
+          required
+        />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="adpsw"
+          id="psw"
+          required
+        />
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="psw-repeat"
+          id="psw-repeat"
+          required
+        />
+        <hr />
+        <button type="submit" class="registerbtn">Register</button>
+      </div>
+
+      <div class="container signin">
+        <button onclick="redirectTouserlogin()">
+          Already have an account? Login here
+        </button>
+
+        <script>
+          function redirectTouserlogin() {
+            window.location.href = "userlogin.html";
+          }
+        </script>
+      </div>
+    </form>
+  </body>
+</html>

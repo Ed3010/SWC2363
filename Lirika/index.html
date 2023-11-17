@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Lirika</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Welcome to Lirika!</h1>
+      <form class="searchbar" action="search.php" method="post"> 
+        <input type="text" id="searchInput" oninput="getSuggestions()" placeholder="Search...">
+        <div id="suggestions"></div>
+      </form>
+    </div>
+  </header>
+
+<script>
+    function getSuggestions() {
+        const input = document.getElementById('searchInput').value;
+        const suggestionsDiv = document.getElementById('suggestions');
+
+        if (input.trim() === '') {
+            suggestionsDiv.style.display = 'none';
+            return;
+        }
+
+        // Use AJAX to fetch suggestions from the server
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    const suggestions = JSON.parse(xhr.responseText);
+                    showSuggestions(suggestions);
+                } else {
+                    console.error('Error fetching suggestions');
+                }
+            }
+        };
+
+        xhr.open('GET', 'getSuggestions.php?query=' + input, true);
+        xhr.send();
+    }
+
+    function showSuggestions(suggestions) {
+        const suggestionsDiv = document.getElementById('suggestions');
+        suggestionsDiv.innerHTML = '';
+
+        if (suggestions.length > 0) {
+            suggestions.forEach(function (suggestion) {
+                const suggestionLink = document.createElement('a');
+                suggestionLink.href = 'viewLyrics.php?id=' + suggestion.id;
+                suggestionLink.textContent = suggestion.title + ' by ' + suggestion.artist;
+                suggestionsDiv.appendChild(suggestionLink);
+            });
+
+            suggestionsDiv.style.display = 'block';
+        } else {
+            suggestionsDiv.style.display = 'none';
+        }
+    }
+</script>
+      </form>
+    </div>
+  </header>
+  <section id="video"></section>
+  <section class="result" id="result">
+  </section>
+
+  <button class="login" onclick="redirectToLogin()">Admin Login</button>
+
+
+  <script>
+    function redirectToLogin() {
+      window.location.href = 'login.html';
+    }
+  </script>
+  <button class="login" onclick="redirectTouserlogin()">User Login</button>
+
+
+  <script>
+    function redirectTouserlogin() {
+      window.location.href = 'userlogin.html';
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

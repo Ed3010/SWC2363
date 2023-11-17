@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+      <div class="imgcontainer">
+        <img src="images/Lirika.png" alt="Avatar" class="avatar" />
+      </div>
+      <form action="login.php" method="post">
+        <table align="center">
+          <tr>
+            <td style="color: aliceblue" colspan="3" align="center">
+              <b>Admin Login</b>
+            </td>
+          </tr>
+          <tr>
+            <td style="color: aliceblue">Username</td>
+            <td>:</td>
+            <td><input name="myusername" type="text" /></td>
+          </tr>
+          <tr>
+            <td style="color: aliceblue">Password</td>
+            <td>:</td>
+            <td><input name="mypassword" type="password" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input name="Submit" type="submit" value="Login" /></td>
+          </tr>
+        </table>
+      </form>
+
+      <div class="container" style="background-color: dimgrey">
+        <button class="cancelbtn" onclick="redirectToIndex()">Cancel</button>
+
+        <script>
+          function redirectToIndex() {
+            window.location.href = "index.html";
+          }
+        </script>
+        <button onclick="redirectToRegister()">
+          No account yet? Register here
+        </button>
+        <script>
+          function redirectToRegister() {
+            window.location.href = "register.html";
+          }
+        </script>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gochi Hand", cursive;
+  background: linear-gradient(to left, rgb(40, 40, 40), rgb(40, 40, 40));
+}
+header {
+  overflow: hidden;
+
+  padding: 30px;
+  background: linear-gradient(
+      to right,
+      rgba(14, 236, 151, 0.65),
+      rgba(128, 13, 223, 0.65)
+    ),
+    url(images/Lirika.png);
+  height: 90vh;
+  width: 100vw;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  clip-path: polygon(2% 11%, 3% 7%, 96% 16%, 96% 27%, 91% 79%, 10% 93%, 8% 89%);
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  color: white;
+  font-size: 22px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container h1 {
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+form {
+  position: relative;
+  display: flex;
+  width: 500px;
+}
+input {
+  width: 100%;
+  max-width: 100%;
+  height: 45px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+button {
+  width: 100px;
+  max-width: 100%;
+  /* height: 40px; */
+  background: #9e2092;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  top: 2px;
+  font-weight: 600;
+  outline: none;
+}
+button:hover {
+  transform: scale(0.95);
+}
+.searchbutton {
+  width: 100px;
+  max-width: 100%;
+  /* height: 40px; */
+  background: #9e2092;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  top: 2px;
+  font-weight: 600;
+  outline: none;
+}
+.searchbutton:hover {
+  transform: scale(0.95);
+}
+li {
+  list-style: none;
+}
+
+.result {
+  color: white;
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  margin-top: 20px;
+  position: relative;
+  display: block;
+}
+#video {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  margin-bottom: 50px;
+  color: green;
+  color: white;
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.song-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: linear-gradient(to left, rgb(40, 40, 40), rgb(40, 40, 40));
+}
+.song-list li {
+  margin-bottom: 20px;
+  width: 500px;
+  justify-content: space-evenly;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: overline;
+  text-decoration-color: rgb(12, 147, 100);
+  position: relative;
+  /* line-height: 30px; */
+}
+
+.song-list li::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  left: -20px;
+  bottom: -4px;
+  height: 3px;
+  background: rgb(12, 147, 100);
+  display: inline-block;
+}
+.song-list li div {
+  float: left;
+}
+
+.song-list li span {
+  float: right;
+  background-color: #9e2092;
+  border: 0;
+  font-size: 12px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 4px 10px;
+  text-transform: capitalize;
+}
+.btn {
+  background-color: rgb(26, 170, 115);
+  margin: 0 auto;
+  border: 0;
+  font-size: 14px;
+  border-radius: 10px;
+  color: rgb(199, 193, 193);
+  cursor: pointer;
+  font-weight: 400;
+  padding: 6px 20px;
+  width: 100px;
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    height: 70vh;
+    width: 95%vw;
+  }
+  .container {
+    font-size: 20px;
+  }
+  form {
+    max-width: 300px;
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    padding: 12px 20px;
+  }
+  button {
+    width: 80px;
+    max-width: 100%;
+  }
+  .song-list li {
+    margin-bottom: 15px;
+    max-width: 300px;
+    letter-spacing: 0.5px;
+    font-size: 17px;
+  }
+}
+.login {
+  width: 100px;
+  position: relative;
+  top: 10%;
+}
+/* Add these styles to index.css */
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Search form styles */
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#searchInput {
+  padding: 10px;
+  font-size: 16px;
+}
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Suggestions styles */
+#suggestions {
+  position: relative; /* Change from absolute to relative */
+  background-color: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  display: none;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#suggestions a {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+#suggestions a:hover {
+  background-color: #f1f1f1;
+}
+
+.fancybox-share__button svg path {
+  fill: #fff;
+}
+
+.fancybox-share__input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #d7d7d7;
+  border-radius: 0;
+  color: #5d5b5b;
+  font-size: 14px;
+  margin: 10px 0 0 0;
+  outline: none;
+  padding: 10px 15px;
+  width: 100%;
+}
+/* Thumbs */
+
+.fancybox-thumbs {
+  background: #ddd;
+  bottom: 0;
+  display: none;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  padding: 2px 2px 4px 2px;
+  position: absolute;
+  right: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  top: 0;
+  width: 212px;
+  z-index: 99995;
+}
+
+.fancybox-thumbs-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.fancybox-show-thumbs .fancybox-thumbs {
+  display: block;
+}
+
+.fancybox-show-thumbs .fancybox-inner {
+  right: 212px;
+}
+
+.fancybox-thumbs__list {
+  font-size: 0;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.fancybox-thumbs-x .fancybox-thumbs__list {
+  overflow: hidden;
+}
+
+.fancybox-thumbs-y .fancybox-thumbs__list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.fancybox-thumbs-y .fancybox-thumbs__list::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.fancybox-thumbs-y .fancybox-thumbs__list::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+.fancybox-thumbs__list a {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  float: left;
+  height: 75px;
+  margin: 2px;
+  max-height: calc(100% - 8px);
+  max-width: calc(50% - 4px);
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  width: 100px;
+}
+
+.fancybox-thumbs__list a::before {
+  border: 6px solid #ff5268;
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 99991;
+}
+
+.fancybox-thumbs__list a:focus::before {
+  opacity: 0.5;
+}
+
+.fancybox-thumbs__list a.fancybox-thumbs-active::before {
+  opacity: 1;
+}
+
+/* Styling for Small-Screen Devices */
+@media all and (max-width: 576px) {
+  .fancybox-thumbs {
+    width: 110px;
+  }
+
+  .fancybox-show-thumbs .fancybox-inner {
+    right: 110px;
+  }
+
+  .fancybox-thumbs__list a {
+    max-width: calc(100% - 10px);
+  }
+}
